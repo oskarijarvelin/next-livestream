@@ -17,7 +17,7 @@ function Index() {
             </Flex>
 
             <Flex maxW="container.xl" pb={{base: "3rem", lg: "6rem"}} mx="auto" px="0" wrap="wrap" pos="relative">
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/bWYkZRKaP0w?autoplay=1&showinfo=0&controls=0&autohide=1&modestbranding=1&fs=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/bWYkZRKaP0w?autoplay=1&showinfo=0&controls=0&autohide=1&modestbranding=1&fs=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                 <Box pos="absolute" w="100%" h="100%"></Box>
             </Flex>
 
