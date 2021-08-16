@@ -22,7 +22,7 @@ function Index() {
             </Flex>
 
             <Flex maxW="container.xl" pb={{base: "3rem", lg: "6rem"}} mx="auto" px="0" wrap="wrap">
-                <iframe width="700" height="200" src="https://www.youtube.com/live_chat?is_popout=1&v=bWYkZRKaP0w&embed_domain=next-livestream.vercel.app"></iframe>
+                <iframe width="1280" height="720" src="https://www.youtube.com/live_chat?is_popout=1&v=bWYkZRKaP0w&embed_domain=next-livestream.vercel.app"></iframe>
             </Flex>
 
         </Layout>
