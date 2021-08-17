@@ -5,12 +5,15 @@ function Index() {
     return (
         <Layout title="Livestream" desc="Next.js sivusto" url="/" img="/kansi-full.png">
 
-            <Flex maxW="container.xl" mt={{base: "3rem", lg: "6rem"}} mb={{base: "1.5rem", lg: "3rem"}} mx="auto" px="0" wrap="wrap" pos="relative" boxShadow="lg">
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/bWYkZRKaP0w?autoplay=1&showinfo=0&controls=0&autohide=1&modestbranding=1&fs=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            <Flex maxW="container.xl" mt={{base: "0", lg: "6rem"}} mb={{base: "1.5rem", lg: "3rem"}} mx="auto" px="0" wrap="wrap" pos="relative" boxShadow="lg">
+                <Box pos="relative" w="100%" h="0" pt="56.25%">
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/bWYkZRKaP0w?autoplay=1&showinfo=0&controls=0&autohide=1&modestbranding=1&fs=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style={{position: "absolute", left: 0, top: 0, width: "100%", height: "100%"}}></iframe>
+                </Box>
+                
                 <Box pos="absolute" w="100%" h="100%"></Box>
             </Flex>
 
-            <Flex maxW="container.xl" pb={{base: "3rem", lg: "6rem"}} mx="auto" px="0" wrap="wrap" >
+            <Flex maxW="container.xl" pb={{base: "3rem", lg: "6rem"}} mx="auto" px={{base: "1rem", lg: "0"}} wrap="wrap" >
 
                 <Flex w={{base: "100%", lg: "calc(50% - 1.5rem)"}} flex={{base: "100%", lg: "calc(50% - 1.5rem)"}} mb={{base: "1.5rem", lg: "0rem"}} mr={{base: "0rem", lg: "1.5rem"}} boxShadow="base">
                     <iframe width="1280" height="720" src="https://www.youtube.com/live_chat?is_popout=1&v=bWYkZRKaP0w&embed_domain=next-livestream.vercel.app"></iframe>
@@ -24,7 +27,7 @@ function Index() {
 
             <Box w="100%" p="0" borderTop="1px solid #DEDEDE"></Box>
 
-            <Flex maxW="container.xl" py={{base: "3rem", lg: "6rem"}} mx="auto" px="0" wrap="wrap">
+            <Flex maxW="container.xl" py={{base: "3rem", lg: "6rem"}} mx="auto" px={{base: "1rem", lg: "0"}} wrap="wrap">
                 <Heading w="100%" flex="100%" mt="0" mb="3rem" align="center">OHJELMA</Heading>
                 <Box w={{base: "100%", lg: "calc(50% - 1.5rem)"}} flex={{base: "100%", lg: "calc(50% - 1.5rem)"}} mb={{base: "1.5rem", lg: "0rem"}} mr={{base: "0rem", lg: "1.5rem"}}>
                     <Heading size="lg" mb="1rem">AAMUPÄIVÄ</Heading>
