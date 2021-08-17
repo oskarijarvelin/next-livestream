@@ -1,5 +1,6 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
+import "@fontsource/open-sans"
 
 const breakpoints = createBreakpoints({
     sm: "320px",
@@ -12,10 +13,15 @@ const breakpoints = createBreakpoints({
 
 const theme = extendTheme({
     colors: {
-        bg: '#FCFCFC',
-        light: '#F8F8F8',
-        body: '#181818',
+        bg: '#FFF',
+        light: '#FFF',
+        body: '#000',
         mute: '#666',
+        current: '#E0D760',
+    },
+    fonts: {
+        heading: "Open Sans",
+        body: "Open Sans",
     },
     breakpoints,
 })
