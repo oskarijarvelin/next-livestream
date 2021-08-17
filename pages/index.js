@@ -7,7 +7,7 @@ function Index() {
 
             <Flex maxW="container.xl" mt={{base: "0", lg: "6rem"}} mb={{base: "1.5rem", lg: "3rem"}} mx="auto" px="0" wrap="wrap" pos="relative" boxShadow="lg">
                 <Box pos="relative" w="100%" h="0" pt="56.25%">
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/bWYkZRKaP0w?autoplay=1&showinfo=0&controls=0&autohide=1&modestbranding=1&fs=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style={{position: "absolute", left: 0, top: 0, width: "100%", height: "100%"}}></iframe>
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/i886lr31cHc?autoplay=1&showinfo=0&controls=0&autohide=1&modestbranding=1&fs=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style={{position: "absolute", left: 0, top: 0, width: "100%", height: "100%"}}></iframe>
                 </Box>
                 
                 <Box pos="absolute" w="100%" h="100%"></Box>
@@ -16,7 +16,7 @@ function Index() {
             <Flex maxW="container.xl" pb={{base: "3rem", lg: "6rem"}} mx="auto" px={{base: "1rem", lg: "0"}} wrap="wrap" >
 
                 <Flex w={{base: "100%", lg: "calc(50% - 1.5rem)"}} flex={{base: "100%", lg: "calc(50% - 1.5rem)"}} mb={{base: "1.5rem", lg: "0rem"}} mr={{base: "0rem", lg: "1.5rem"}} boxShadow="base">
-                    <iframe width="1280" height="720" src="https://www.youtube.com/live_chat?is_popout=1&v=bWYkZRKaP0w&embed_domain=next-livestream.vercel.app"></iframe>
+                    <iframe width="1280" height="720" src="https://www.youtube.com/live_chat?is_popout=1&v=i886lr31cHc&embed_domain=next-livestream.vercel.app"></iframe>
                 </Flex>
 
                 <Flex w={{base: "100%", lg: "calc(50% - 1.5rem)"}} flex={{base: "100%", lg: "calc(50% - 1.5rem)"}} ml={{base: "0rem", lg: "1.5rem"}} boxShadow="base">
