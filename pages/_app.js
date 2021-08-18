@@ -17,7 +17,7 @@ const theme = extendTheme({
         light: '#FFF',
         body: '#000',
         mute: '#666',
-        current: '#E0D760',
+        current: '#C3D9D7',
     },
     fonts: {
         heading: "Open Sans",

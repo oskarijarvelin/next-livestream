@@ -7,7 +7,7 @@ function Index() {
 
             <Flex maxW="1640px" mt={{base: "0", lg: "6rem"}} mb={{base: "1.5rem", lg: "3rem"}} mx="auto" px="0" wrap="wrap" pos="relative" boxShadow="lg">
                 <Box pos="relative" w="100%" h="0" pt="56.25%">
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/b_8K3TLB_F8?autoplay=1&showinfo=0&controls=0&autohide=1&modestbranding=1&fs=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style={{position: "absolute", left: 0, top: 0, width: "100%", height: "100%"}}></iframe>
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/2A2Pss4b_qM?autoplay=1&showinfo=0&controls=0&autohide=1&modestbranding=1&fs=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style={{position: "absolute", left: 0, top: 0, width: "100%", height: "100%"}}></iframe>
                 </Box>
                 
                 <Box pos="absolute" w="100%" h="100%"></Box>
