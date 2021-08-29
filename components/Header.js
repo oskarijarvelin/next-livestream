@@ -18,7 +18,7 @@ export default function Header() {
             <Spacer />
             <Box px={{base: "4", lg: "8"}} py="4">
                 <Text size="xs" fontSize="14px" fontWeight="600" mb="1rem" opacity="60%">Yhteistyökumppanit</Text>
-                <Image src="stl.svg" h="60px" maxH="60px"/>
+                <Image src="stl.svg" h="60px" maxH="60px" alt="Suomen tiedetoimittajain liiton logo" />
             </Box>
         </Flex>
   );

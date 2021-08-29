@@ -41,10 +41,7 @@ export default function Uusi() {
                             <Stack spacing={4}>    
                                 <FormControl id="email" name="email">
                                     <InputGroup>
-                                        <InputLeftElement
-                                        pointerEvents="none"
-                                        children={<Icon as={HiOutlineMail} color="gray.500"/>}
-                                        />
+                                        <InputLeftElement pointerEvents="none" children={<Icon as={HiOutlineMail} color="gray.500"/>} />
                                         <Input type="email" placeholder="Sähköpostiosoite" />
                                     </InputGroup>
                                 </FormControl>

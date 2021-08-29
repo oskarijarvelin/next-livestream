@@ -33,24 +33,14 @@ export default function LoginForm({adminOnly}) {
             <Stack spacing={4}>    
                 <FormControl id="email" name="email">
                     <InputGroup>
-                        <InputLeftElement
-                        pointerEvents="none"
-                        children={<Icon as={HiOutlineMail} color="gray.500"/>}
-                        />
+                        <InputLeftElement pointerEvents="none" children={<Icon as={HiOutlineMail} color="gray.500"/>} />
                         <Input type="email" placeholder="Sähköpostiosoitteesi" />
                     </InputGroup>
                 </FormControl>
                 <FormControl id="password" name="password">
                     <InputGroup size="md">
-                        <InputLeftElement
-                            pointerEvents="none"
-                            children={<Icon as={HiOutlineLockClosed} color="gray.500"/>}
-                        />
-                        <Input
-                            pr="4.5rem"
-                            type={show ? "text" : "password"}
-                            placeholder="Salasanasi"
-                        />
+                        <InputLeftElement pointerEvents="none" children={<Icon as={HiOutlineLockClosed} color="gray.500"/>} />
+                        <Input pr="4.5rem" type={show ? "text" : "password"} placeholder="Salasanasi" />
                         <InputRightElement width="4.5rem">
                             <Button bg="current" color="body" h="1.75rem" size="sm" onClick={handleClick}>
                                 {show ? "Piilota" : "Näytä"}
