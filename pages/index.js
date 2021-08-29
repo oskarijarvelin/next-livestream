@@ -1,23 +1,40 @@
-import { Flex, Box, Text, Heading, Image } from '@chakra-ui/react'
+import { useContext } from 'react'
+import AppContext from '../context'
+import { Flex, Box, Text, Heading } from '@chakra-ui/react'
 import Layout from '../components/Layout'
+import LoginForm from '../components/LoginForm'
 
-function Index() {
+export default function Index() {
+    const { login } = useContext(AppContext)
     return (
         <Layout title="Livestream" desc="Next.js sivusto" url="/" img="/kansi-full.png">
 
-            <Flex maxW="1640px" mt={{base: "0", lg: "6rem"}} mb={{base: "1.5rem", lg: "3rem"}} mx="auto" px="0" wrap="wrap" pos="relative" boxShadow="lg">
-                <Box pos="relative" w="100%" h="0" pt="56.25%">
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/2A2Pss4b_qM?autoplay=1&showinfo=0&controls=0&autohide=1&modestbranding=1&fs=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style={{position: "absolute", left: 0, top: 0, width: "100%", height: "100%"}}></iframe>
-                </Box>
-                
-                <Box pos="absolute" w="100%" h="100%"></Box>
-            </Flex>
+            {login &&
+                <Flex maxW="1640px" mt={{base: "0", lg: "6rem"}} mb={{base: "1.5rem", lg: "3rem"}} mx="auto" px="0" wrap="wrap" pos="relative" boxShadow="lg">
+                    <Box pos="relative" w="100%" h="0" pt="56.25%">
+                        <iframe width="1280" height="720" src="https://www.youtube.com/embed/2A2Pss4b_qM?autoplay=1&showinfo=0&controls=0&autohide=1&modestbranding=1&fs=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style={{position: "absolute", left: 0, top: 0, width: "100%", height: "100%"}}></iframe>
+                    </Box>
+                    
+                    <Box pos="absolute" w="100%" h="100%"></Box>
+                </Flex>
+            }
 
             <Flex maxW="container.xl" py={{base: "3rem", lg: "6rem"}} mx="auto" px={{base: "1rem", lg: "0"}} wrap="wrap" >
 
                 <Box w={{base: "100%", lg: "calc(50% - 3rem)"}} flex={{base: "100%", lg: "calc(50% - 3rem)"}} mb={{base: "3rem", lg: "0rem"}} mr={{base: "0rem", lg: "3rem"}}>
-                    <Heading w="100%" flex="100%" mt="0" mb="3rem">KESKUSTELU</Heading>
-                    <iframe src='https://go.arena.im/embed/chat/oskari-jarvelin/oskari-jarvelin-global' frameBorder="0" style={{border: 0, width: "1px", minWidth: "100%", height: "930px", borderRadius: "4px"}}></iframe>
+                    
+                    {login &&
+                        <>
+                            <Heading w="100%" flex="100%" mt="0" mb="3rem">KESKUSTELU</Heading>
+                            <iframe src='https://go.arena.im/embed/chat/oskari-jarvelin/oskari-jarvelin-global' frameBorder="0" style={{border: 0, width: "1px", minWidth: "100%", height: "930px", borderRadius: "4px"}}></iframe>
+                        </>
+                    }
+                    {!login &&
+                        <>
+                            <Heading w="100%" flex="100%" mt="0" mb="3rem">KIRJAUDU</Heading>
+                            <LoginForm />
+                        </>
+                    }
                 </Box>  
 
                 <Box w={{base: "100%", lg: "calc(50% - 3rem)"}} flex={{base: "100%", lg: "calc(50% - 3rem)"}} ml={{base: "0rem", lg: "3rem"}}>
@@ -87,5 +104,3 @@ function Index() {
         </Layout>
     )
 }
-  
-export default Index

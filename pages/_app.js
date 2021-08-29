@@ -1,3 +1,5 @@
+import App from 'next/app';
+import AppContext from '../context'
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import "@fontsource/open-sans"
@@ -26,12 +28,25 @@ const theme = extendTheme({
     breakpoints,
 })
 
-function MyApp({ Component, pageProps }) {
-    return (
-        <ChakraProvider theme={theme}>
-            <Component {...pageProps} />
-        </ChakraProvider>
-    )
+export default class MyApp extends App {
+    state = {
+        login: false
+    }
+
+    setLogin = ( val ) => {
+        this.setState({
+            login:  val
+        })
+    }
+
+    render() {
+        const { Component, pageProps } = this.props;
+        return (
+            <ChakraProvider theme={theme}>
+                <AppContext.Provider value={{login: this.state.login, setLogin: this.setLogin}}>
+                    <Component {...pageProps} />
+                </AppContext.Provider>
+            </ChakraProvider>
+        )
+    }
 }
-  
-export default MyApp
