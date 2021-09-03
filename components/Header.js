@@ -1,4 +1,4 @@
-import { Flex, Box, Wrap, WrapItem, Spacer, Text, Image, Heading, Link } from '@chakra-ui/react'
+import { Flex, Box, Text, Image, Heading, Link } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
 export default function Header() {

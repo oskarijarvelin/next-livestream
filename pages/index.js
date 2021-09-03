@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import AppContext from '../context'
-import { Flex, Box, Text, Heading } from '@chakra-ui/react'
+import { Flex, Box, Text, Image, Heading } from '@chakra-ui/react'
 import Layout from '../components/Layout'
 import LoginForm from '../components/LoginForm'
 
@@ -16,6 +16,12 @@ export default function Index() {
                     </Box>
                     
                     <Box pos="absolute" w="100%" h="100%"></Box>
+                </Flex>
+            }
+
+            {!login &&
+                <Flex maxW="container.xl" mt={{base: "0", lg: "6rem"}} mb={{base: "1.5rem", lg: "3rem"}} mx="auto" px="0" wrap="wrap" pos="relative" boxShadow="lg">
+                    <Image src="banner.png" alt="Viestintäpäivä Plussa" />
                 </Flex>
             }
 
