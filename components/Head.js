@@ -4,7 +4,7 @@ export default function MyHead({title, desc, url, img}) {
     let baseUrl = "https://next-livestream.vercel.app";
     return (
         <Head>
-            <title>{title} - Livestream</title>
+            <title>Viestintäpäivä Plussa</title>
             <meta name="description" content={desc} />
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={desc} />
