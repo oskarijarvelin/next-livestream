@@ -1,15 +1,21 @@
 import { useContext, useState } from 'react'
 import AppContext from '../context'
-import sha1 from 'sha1'
-import { Stack, FormControl, InputGroup, InputLeftElement, InputRightElement, Input, Button, Icon } from '@chakra-ui/react'
-import { HiOutlineMail, HiOutlineLockClosed } from 'react-icons/hi'
+import fetch from 'isomorphic-unfetch';
+import { Stack, FormControl, InputGroup, InputLeftElement, Input, Button, Icon } from '@chakra-ui/react'
+import { HiOutlineMail} from 'react-icons/hi'
 
 export default function LoginForm({adminOnly}) {
     const [show, setShow] = useState(false)
     const { setLogin } = useContext(AppContext)
     const handleClick = () => setShow(!show)
+
+    const sendEmail = async () => {
+        const req = await fetch(`${process.env.NEXT_PUBLIC_EMAIL_API}?value1=${event.target.email.value.toLowerCase()}`);
+    };
+
     const loginUser = event => {
         event.preventDefault() 
+        sendEmail()
         setLogin(true)
         //let shaEmail = sha1(event.target.email.value.toLowerCase()).toLowerCase().split("").reverse().join("")
         //if ( shaEmail == event.target.password.value.toLowerCase() ) {
