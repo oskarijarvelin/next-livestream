@@ -11,8 +11,12 @@ export default function LoginForm({ip}) {
 
     const sendEmail = async (event) => {
         const req = await fetch(`${process.env.NEXT_PUBLIC_EMAIL_API}?value1=${event.target.email.value.toLowerCase()}&value2=${ip}`)
-            .catch(error => alert('Virhe! ' + error.message));
+            .catch(error => alert() );
     };
+
+    function alert() {
+        if ( process.env.NEXT_PUBLIC_EMAIL_API == 'localhost:3000' ) { alert('Virhe! ' + error.message) }
+    }
 
     const loginUser = event => {
         event.preventDefault() 
