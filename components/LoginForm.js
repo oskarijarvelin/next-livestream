@@ -4,13 +4,13 @@ import fetch from 'isomorphic-unfetch'
 import { Stack, FormControl, InputGroup, InputLeftElement, Input, Button, Icon } from '@chakra-ui/react'
 import { HiOutlineMail} from 'react-icons/hi'
 
-export default function LoginForm({ip}) {
+export default function LoginForm({ip, city}) {
     const [show, setShow] = useState(false)
     const { setLogin } = useContext(AppContext)
     const handleClick = () => setShow(!show)
 
     const sendEmail = async (event) => {
-        const req = await fetch(`${process.env.NEXT_PUBLIC_EMAIL_API}?value1=${event.target.email.value.toLowerCase()}&value2=${ip}`)
+        const req = await fetch(`${process.env.NEXT_PUBLIC_EMAIL_API}?value1=${event.target.email.value.toLowerCase()}&value2=${ip}&value3=${city}`)
             .catch(error => alert() );
     };
 

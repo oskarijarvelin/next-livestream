@@ -16,8 +16,6 @@ export default function Index() {
     const { login } = useContext(AppContext)
     const { data, error } = useSWR('https://geolocation-db.com/json/', fetcher);
 
-    console.log(data?.IPv4)
-
     return (
         <Layout title="Livestream" desc="Next.js sivusto" url="/" img="/kansi-full.png">
 
@@ -50,7 +48,7 @@ export default function Index() {
                     {!login &&
                         <>
                             <Heading w="100%" flex="100%" mt="0" mb="3rem">KIRJAUDU</Heading>
-                            <LoginForm ip={data?.IPv4} />
+                            <LoginForm ip={data?.IPv4} city={data?.city} />
                         </>
                     }
                 </Box>  
