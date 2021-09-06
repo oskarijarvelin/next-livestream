@@ -1,10 +1,8 @@
 import { useContext, useState } from 'react'
 import AppContext from '../context'
-import fetch from 'isomorphic-unfetch';
+import fetch from 'isomorphic-unfetch'
 import { Stack, FormControl, InputGroup, InputLeftElement, Input, Button, Icon } from '@chakra-ui/react'
 import { HiOutlineMail} from 'react-icons/hi'
-
-
 
 export default function LoginForm({ip}) {
     const [show, setShow] = useState(false)

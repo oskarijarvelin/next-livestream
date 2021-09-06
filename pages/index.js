@@ -1,18 +1,23 @@
 import { useContext } from 'react'
 import AppContext from '../context'
+import fetch from 'isomorphic-unfetch'
+import useSWR from 'swr';
 import { Flex, Box, Text, Image, Heading } from '@chakra-ui/react'
 import Layout from '../components/Layout'
 import LoginForm from '../components/LoginForm'
 
-export async function getServerSideProps() {
-    const res = await fetch(`https://geolocation-db.com/json/`)
-    const data = await res.json()
-    return { props: { data } }
-}
+async function fetcher(url) {
+    const res = await fetch(url);
+    const json = await res.json();
+    return json;
+  }
 
-export default function Index({data}) {
+export default function Index() {
     const { login } = useContext(AppContext)
-    console.log(data)
+    const { data, error } = useSWR('https://geolocation-db.com/json/', fetcher);
+
+    console.log(data?.IPv4)
+
     return (
         <Layout title="Livestream" desc="Next.js sivusto" url="/" img="/kansi-full.png">
 
