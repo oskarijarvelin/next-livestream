@@ -4,18 +4,26 @@ import fetch from 'isomorphic-unfetch';
 import { Stack, FormControl, InputGroup, InputLeftElement, Input, Button, Icon } from '@chakra-ui/react'
 import { HiOutlineMail} from 'react-icons/hi'
 
-export default function LoginForm({adminOnly}) {
+export async function getServerSideProps() {
+    const res = await fetch(`https://api.ipify.org/?format=json`)
+    const data = await res.json()
+    return { props: { data } }
+  }
+  
+
+export default function LoginForm({data, adminOnly}) {
     const [show, setShow] = useState(false)
     const { setLogin } = useContext(AppContext)
     const handleClick = () => setShow(!show)
 
     const sendEmail = async (event) => {
-        const req = await fetch(`${process.env.NEXT_PUBLIC_EMAIL_API}?value1=${event.target.email.value.toLowerCase()}`)
+        const req = await fetch(`${process.env.NEXT_PUBLIC_EMAIL_API}?value1=${event.target.email.value.toLowerCase()}&value2=${data?.ip}`)
             .catch(error => alert('Virhe! ' + error.message));
     };
 
     const loginUser = event => {
         event.preventDefault() 
+        console.log('IP: ' + data?.ip)
         sendEmail(event)
         setLogin(true)
         //let shaEmail = sha1(event.target.email.value.toLowerCase()).toLowerCase().split("").reverse().join("")
