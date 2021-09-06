@@ -9,13 +9,23 @@ export default function LoginForm({adminOnly}) {
     const { setLogin } = useContext(AppContext)
     const handleClick = () => setShow(!show)
 
-    const sendEmail = async () => {
-        const req = await fetch(`${process.env.NEXT_PUBLIC_EMAIL_API}?value1=${event.target.email.value.toLowerCase()}`);
+    const getIp = async () => {
+        const req = await fetch('https://api.ipify.org/?format=json')
+        .catch(error => alert('Virhe! ' + error.message));
+        const res = await req.json();
+        return res.ip;
+    };
+
+    const sendEmail = async (event, ip) => {
+        const req = await fetch(`${process.env.NEXT_PUBLIC_EMAIL_API}?value1=${event.target.email.value.toLowerCase()}&value2=${ip}`)
+            .catch(error => alert('Virhe! ' + error.message));
     };
 
     const loginUser = event => {
         event.preventDefault() 
-        sendEmail()
+        let ip = getIp()
+        console.log('IP: ' + ip)
+        sendEmail(event, ip)
         setLogin(true)
         //let shaEmail = sha1(event.target.email.value.toLowerCase()).toLowerCase().split("").reverse().join("")
         //if ( shaEmail == event.target.password.value.toLowerCase() ) {
