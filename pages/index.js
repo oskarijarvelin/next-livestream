@@ -4,8 +4,15 @@ import { Flex, Box, Text, Image, Heading } from '@chakra-ui/react'
 import Layout from '../components/Layout'
 import LoginForm from '../components/LoginForm'
 
-export default function Index() {
+export async function getServerSideProps() {
+    const res = await fetch(`https://geolocation-db.com/json/`)
+    const data = await res.json()
+    return { props: { data } }
+}
+
+export default function Index({data}) {
     const { login } = useContext(AppContext)
+    console.log(data)
     return (
         <Layout title="Livestream" desc="Next.js sivusto" url="/" img="/kansi-full.png">
 
@@ -38,7 +45,7 @@ export default function Index() {
                     {!login &&
                         <>
                             <Heading w="100%" flex="100%" mt="0" mb="3rem">KIRJAUDU</Heading>
-                            <LoginForm />
+                            <LoginForm ip={data?.IPv4} />
                         </>
                     }
                 </Box>  
