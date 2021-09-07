@@ -70,7 +70,7 @@ export default function Index() {
                     {login &&
                         <>
                             <Heading w="100%" flex="100%" mt="0" mb="3rem">KESKUSTELU</Heading>
-                            <iframe src='https://go.arena.im/embed/chat/oskari-jarvelin/oskari-jarvelin-global' frameBorder="0" style={{border: 0, width: "1px", minWidth: "100%", height: "930px", borderRadius: "4px"}}></iframe>
+                            <iframe src='https://go.arena.im/embed/chat/digimoguli-oy/digimoguli-oy-global' frameBorder="0" style={{border: 0, width: "1px", minWidth: "100%", height: "930px", borderRadius: "4px"}} />
                         </>
                     }
                     {!login &&
