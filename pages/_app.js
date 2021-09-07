@@ -31,12 +31,19 @@ const theme = extendTheme({
 
 export default class MyApp extends App {
     state = {
-        login: false
+        login: false,
+        time: new Date()
     }
 
     setLogin = ( val ) => {
         this.setState({
-            login:  val
+            login: val
+        })
+    }
+
+    setTime = ( date ) => {
+        this.setState({
+            time: date
         })
     }
 
@@ -44,7 +51,7 @@ export default class MyApp extends App {
         const { Component, pageProps } = this.props;
         return (
             <ChakraProvider theme={theme}>
-                <AppContext.Provider value={{login: this.state.login, setLogin: this.setLogin}}>
+                <AppContext.Provider value={{login: this.state.login, setLogin: this.setLogin, time: this.state.time, setTime: this.setTime}}>
                     <Component {...pageProps} />
                 </AppContext.Provider>
             </ChakraProvider>
