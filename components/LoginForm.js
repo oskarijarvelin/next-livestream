@@ -14,9 +14,7 @@ export default function LoginForm({ip, city}) {
             .catch(error => alert() );
     };
 
-    function alert() {
-        if ( process.env.NEXT_PUBLIC_EMAIL_API == 'localhost:3000' ) { alert('Virhe! ' + error.message) }
-    }
+    function alert() {}
 
     const loginUser = event => {
         event.preventDefault() 

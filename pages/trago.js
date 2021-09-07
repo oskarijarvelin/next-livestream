@@ -40,7 +40,7 @@ export default function Index() {
 
             {login &&
                 <Flex maxW="1640px" mt={{base: "0", lg: "6rem"}} mb={{base: "1.5rem", lg: "3rem"}} mx="auto" px="0" wrap="wrap" pos="relative" boxShadow="lg">
-                    <YouTube videoId="Rgkh7VpHPNU" className="yt__vid" containerClassName="yt" opts={opts} onReady={_onReady} />
+                    <YouTube videoId="O565z7DJq6g" className="yt__vid" containerClassName="yt" opts={opts} onReady={_onReady} />
                     
                     
                 </Flex>
