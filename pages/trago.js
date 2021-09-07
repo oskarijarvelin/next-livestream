@@ -14,7 +14,7 @@ async function fetcher(url) {
   }
 
 export default function Index() {
-    const { login } = useContext(AppContext)
+    const { login, setLogin } = useContext(AppContext)
     const { data, error } = useSWR('https://geolocation-db.com/json/', fetcher);
     const opts = {
         height: '923',
@@ -35,14 +35,16 @@ export default function Index() {
         event.target.playVideo();
     }
 
+    function _onEnd(event) {
+        setLogin(false)
+    }
+
     return (
         <Layout title="Livestream" desc="Next.js sivusto" url="/" img="/kansi-full.png">
 
             {login &&
                 <Flex maxW="1640px" mt={{base: "0", lg: "6rem"}} mb={{base: "1.5rem", lg: "3rem"}} mx="auto" px="0" wrap="wrap" pos="relative" boxShadow="lg">
-                    <YouTube videoId="O565z7DJq6g" className="yt__vid" containerClassName="yt" opts={opts} onReady={_onReady} />
-                    
-                    
+                    <YouTube videoId="O565z7DJq6g" className="yt__vid" containerClassName="yt" opts={opts} onReady={_onReady} onEnd={_onEnd} />
                 </Flex>
             }
 
