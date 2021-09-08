@@ -40,7 +40,7 @@ export default function LoginForm({ip, city}) {
   
     return (
         <form onSubmit={loginUser}>
-            <Stack spacing={4}>    
+            <Stack spacing={4} mb="3rem">    
                 <FormControl id="email" name="email">
                     <InputGroup>
                         <InputLeftElement pointerEvents="none" children={<Icon as={HiOutlineMail} color="gray.500"/>} />
