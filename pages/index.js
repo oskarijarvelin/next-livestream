@@ -68,12 +68,14 @@ export default function Index() {
                 <Box w={{base: "100%", lg: "calc(50% - 3rem)"}} flex={{base: "100%", lg: "calc(50% - 3rem)"}} mb={{base: "3rem", lg: "0rem"}} mr={{base: "0rem", lg: "3rem"}}>
                     {!login &&
                         <>
-                            <Heading w="100%" flex="100%" mt="0" mb="3rem">KIRJAUDU</Heading>
+                            <Heading w="100%" flex="100%" mt="0" mb="3rem">KATSO LÄHETYSTÄ</Heading>
+                            <Text mb="1rem">Katso lähetystä antamalla sähköpostiosoitteesi, jota käytit osallistumismaksun maksamiseen.</Text>
                             <LoginForm ip={data?.IPv4} city={data?.city} />
                         </>
                     }
                     
                     <Heading w="100%" flex="100%" mt="0" mb="3rem">KESKUSTELU</Heading>
+                    <Text mb="1rem">Osallistu keskusteluun, anna palautetta tai ota yhteyttä tiimiimme:</Text>
                     <iframe src='https://go.arena.im/embed/chat/digimoguli-oy/digimoguli-oy-global' frameBorder="0" style={{border: 0, width: "1px", minWidth: "100%", height: "930px", borderRadius: "4px"}}></iframe>                    
                 </Box>  
 
