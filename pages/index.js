@@ -84,6 +84,8 @@ export default function Index() {
 
                     <Heading w="100%" flex="100%" mt="0" mb="3rem" pl={{base: "0rem", lg: "1rem"}}>OHJELMA</Heading>
 
+                    <Text ml="1rem" mb="2rem">Klikkaa ohjelmaa siirtyäksesi siihen videossa.</Text>
+
                     <Event start="0900" stop="0959" first={true} seekTo={22}>
                         <Text fontWeight="bold" mb="0.5rem">9.00 Tilaisuuden avaus</Text>
                         <Text mb="0.5rem">Toimitusjohtaja, FT <i>Elina Melgin</i>, ProCom – Viestinnän ammattilaiset ja FT <i>Ulla Järvi</i>, Suomen tiedetoimittajien liiton pääsihteeri</Text>

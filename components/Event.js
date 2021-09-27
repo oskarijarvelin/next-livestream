@@ -15,7 +15,7 @@ export default function Event({children, start, stop, first, seekTo}) {
         pt = "0rem"
     }
     return (
-        <Box bg={current ? "current" : "bg"} pb="1rem" pt={pt} px={{base: "0rem", lg: "1rem"}} onClick={() => player.seekTo(seekTo)}>
+        <Box bg={current ? "current" : "bg"} cursor="pointer" pb="1rem" pt={pt} px={{base: "0rem", lg: "1rem"}} onClick={() => player.seekTo(seekTo)}>
             {children}
         </Box>
     )
