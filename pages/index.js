@@ -16,7 +16,7 @@ async function fetcher(url) {
   }
 
 export default function Index() {
-    const { login, setLogin, time, setTime } = useContext(AppContext)
+    const { login, setLogin, time, setTime, player, setPlayer } = useContext(AppContext)
     const { data, error } = useSWR('https://geolocation-db.com/json/', fetcher);
 
     if ( moment(time).format('DD.MM.YYYY') == '09.09.2021' ) {
@@ -42,6 +42,7 @@ export default function Index() {
     function _onReady(event) {
         // access to player in all event handlers via event.target
         event.target.playVideo();
+        setPlayer(event.target);
     }
 
     function _onEnd(event) {
@@ -83,19 +84,19 @@ export default function Index() {
 
                     <Heading w="100%" flex="100%" mt="0" mb="3rem" pl={{base: "0rem", lg: "1rem"}}>OHJELMA</Heading>
 
-                    <Event start="0900" stop="0959" first={true}>
+                    <Event start="0900" stop="0959" first={true} seekTo={22}>
                         <Text fontWeight="bold" mb="0.5rem">9.00 Tilaisuuden avaus</Text>
                         <Text mb="0.5rem">Toimitusjohtaja, FT <i>Elina Melgin</i>, ProCom – Viestinnän ammattilaiset ja FT <i>Ulla Järvi</i>, Suomen tiedetoimittajien liiton pääsihteeri</Text>
                         <Text mb="0.5rem">Kriisikonsultti ja Tekirin hallituksen puheenjohtaja <i>Harri Saukkomaa</i></Text>
                         <Text>Entinen ministeri ja puoluejohtaja <i>Tuija Brax</i></Text>
                     </Event>
 
-                    <Event start="1000" stop="1019">
+                    <Event start="1000" stop="1019" seekTo={3857}>
                         <Text fontWeight="bold" mb="0.5rem">10.00 Kommenttipuheenvuoro median näkökulmasta: toimittaja ajojahdin kohteena</Text>
                         <Text>Väitöskirjatutkija, Tampereen yliopisto <i>Ilmari Hiltunen</i></Text>
                     </Event>
 
-                    <Event start="1020" stop="1044">
+                    <Event start="1020" stop="1044" seekTo={5189}>
                         <Text fontWeight="bold">10.20 Keskustelu aamupäivän alustajien ja yleisön välillä</Text>
                     </Event>
 
@@ -103,7 +104,7 @@ export default function Index() {
                         <Heading size="md" opacity="60%">10.45 KAHVITAUKO</Heading>
                     </Event>
 
-                    <Event start="1100" stop="1159">
+                    <Event start="1100" stop="1159" seekTo={7380}>
                         <Text fontWeight="bold" mb="0.5rem">11.00 Nuoret kriisin keskiössä</Text>
                         <Text>1. Case Stavanger, Norway: Nuoriso pandemian kriisiviestinnän kohteena</Text>
                         <Text mb="0.5rem"><i>Eirik Haglund</i>, Communication Advisor, City of Stavanger, Norway</Text>
@@ -115,12 +116,12 @@ export default function Index() {
                         <Heading size="md" opacity="60%">12.00–13.00 LOUNAS</Heading>
                     </Event>
 
-                    <Event start="1300" stop="1359">
+                    <Event start="1300" stop="1359" seekTo={14226}>
                         <Text fontWeight="bold" mb="0.5rem">13.00 Kriisi, yksilö ja median vastuu</Text>
                         <Text>Alustus <i>Ulla Järvi</i> sekä vuoropuhelu toimittaja <i>Heljä Salonen</i>, Iltalehti ja toimituspäällikkö <i>Marjo Oikarinen</i>, Lännen media</Text>
                     </Event>
 
-                    <Event start="1400" stop="1444">
+                    <Event start="1400" stop="1444" seekTo={17936}>
                         <Text fontWeight="bold" mb="0.5rem">14.00 Suomi ja globaalit kriisit</Text>
                         <Text>Alustus <i>FT Elina Melgin</i> sekä vuoropuhelu ulkoministeriön Kehityspoliittisen osaston apulaisosastopäällikkö <i>Titta Maja</i> & Työ- ja elinkeinoministeriön viestintäjohtaja & ProComin hallituksen jäsen <i>Mikko Koivumaa</i></Text>
                     </Event>
@@ -129,13 +130,13 @@ export default function Index() {
                         <Heading size="md" opacity="60%">14.45 KAHVITAUKO</Heading>
                     </Event>
 
-                    <Event start="1510" stop="1559">
+                    <Event start="1510" stop="1559" seekTo={22039}>
                         <Text fontWeight="bold" mb="0.5rem">15.10 Paneelikeskustelu: Kenen kriisi? Miltä näyttävät Pohjoisen Suomen keskeiset kehityshankkeet poliittisessa ja sosioekonomisessa kontekstissa? </Text>
                         <Text mb="0.5rem">Paneelissa mukana Lapin kauppakamarin toimitusjohtaja <i>Timo Rautajoki</i> ja Kemin kaupunginjohtaja <i>Matti Ruotsalainen</i> ja Kalevan Pohjois-Suomen uutisten toimittaja <i>Anja Harju</i>.</Text>
                         <Text>Paneelin juontaa Oulun yliopiston viestintäpäällikkö <i>Elina Mattila-Niemi</i></Text>
                     </Event>
 
-                    <Event start="1600" stop="1614">
+                    <Event start="1600" stop="1614" seekTo={25462}>
                         <Text fontWeight="bold">16.00 Yhteenveto ja päätössanat</Text>
                     </Event>
 

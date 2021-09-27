@@ -29,10 +29,16 @@ const theme = extendTheme({
     breakpoints,
 })
 
+let seekTo = {}
+seekTo.seekTo = function(){}
+seekTo.playVideo = function(){}
+
 export default class MyApp extends App {
+    
     state = {
         login: false,
-        time: new Date()
+        time: new Date(),
+        player: seekTo
     }
 
     setLogin = ( val ) => {
@@ -46,12 +52,18 @@ export default class MyApp extends App {
             time: date
         })
     }
+    
+    setPlayer = ( target ) => {
+        this.setState({
+            player: target
+        })
+    }
 
     render() {
         const { Component, pageProps } = this.props;
         return (
             <ChakraProvider theme={theme}>
-                <AppContext.Provider value={{login: this.state.login, setLogin: this.setLogin, time: this.state.time, setTime: this.setTime}}>
+                <AppContext.Provider value={{login: this.state.login, setLogin: this.setLogin, time: this.state.time, setTime: this.setTime, player: this.state.player, setPlayer: this.setPlayer}}>
                     <Component {...pageProps} />
                 </AppContext.Provider>
             </ChakraProvider>
